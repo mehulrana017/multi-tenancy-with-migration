@@ -107,10 +107,10 @@ yarn migrate:master:down
 
 ```bash
 # Run up migrations
-yarn migrate:tenant:up
+yarn migrate:tenant:up <tenant_name>
 
 # Run down migrations
-yarn migrate:tenant:down
+yarn migrate:tenant:down <tenant_name>
 ```
 
 ### All Databases Migrations
