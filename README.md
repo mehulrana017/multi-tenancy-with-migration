@@ -44,47 +44,50 @@ To use MongoDB Atlas:
 
 This project uses the following environment variables:
 
-- `MASTER_DB_URI`: MongoDB Atlas connection string for the master database
-- `MONGO_URI`: Base MongoDB Atlas connection string for tenant databases (include `<DB_NAME>` placeholder)
-- `PORT`: Port number for the server (default: 5000)
+```env
+MASTER_DB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<master_db_name>
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<DB_NAME>
+PORT=5000
+```
 
 Create a `.env` file in the root directory and add these variables with your specific values.
 
 ## 🚀 Getting Started
 
-1. Clone the repository:
-   \`\`\`bash
-   git clone https://github.com/mehulrana017/multi-tenancy-with-migration.git
-   cd multi-tenancy-with-migration
-   \`\`\`
+### 1. Clone the repository
 
-2. Install dependencies:
-   \`\`\`bash
-   yarn install
-   \`\`\`
+```bash
+git clone https://github.com/mehulrana017/multi-tenancy-with-migration.git
+cd multi-tenancy-with-migration
+```
 
-3. Set up environment variables:
-   \`\`\`bash
-   cp .env.sample .env
-   \`\`\`
-   Edit the `.env` file with your MongoDB Atlas connection strings and other configuration:
-   \`\`\`
-   MASTER_DB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<master_db_name>
-   MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<DB_NAME>
-   PORT=5000
-   \`\`\`
-   Replace `<username>`, `<password>`, `<cluster>`, and `<master_db_name>` with your MongoDB Atlas credentials and cluster information.
+### 2. Install dependencies
 
-4. Build the project:
-   \`\`\`bash
-   yarn build
-   \`\`\`
+```bash
+yarn install
+```
 
-5. Start the server:
-   \`\`\`bash
-   yarn dev # for development
-   yarn start # for production
-   \`\`\`
+### 3. Set up environment variables
+
+```bash
+cp .env.sample .env
+```
+
+### 4. Build the project
+
+```bash
+yarn build
+```
+
+### 5. Start the server
+
+```bash
+# For development
+yarn dev
+
+# For production
+yarn start
+```
 
 ## 🗄️ Database Migrations
 
@@ -92,87 +95,74 @@ The system supports different types of migrations:
 
 ### Master Database Migrations
 
-\`\`\`bash
-
+```bash
 # Run up migrations
-
 yarn migrate:master:up
 
 # Run down migrations
-
 yarn migrate:master:down
-\`\`\`
+```
 
 ### Tenant Database Migrations
 
-\`\`\`bash
-
+```bash
 # Run up migrations
-
 yarn migrate:tenant:up
 
 # Run down migrations
-
 yarn migrate:tenant:down
-\`\`\`
+```
 
 ### All Databases Migrations
 
-\`\`\`bash
-
+```bash
 # Run up migrations for all databases
-
 yarn migrate:all:up
 
 # Run down migrations for all databases
-
 yarn migrate:all:down
-\`\`\`
+```
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 src/
-├── config/ # Configuration files
-├── controllers/ # Request handlers
-├── middleware/ # Express middleware
-├── migrations/ # Database migrations
-│ ├── master/ # Master database migrations
-│ └── tenants/ # Tenant-specific migrations
-├── models/ # Database models
-├── routes/ # API routes
-├── services/ # Business logic
-├── app.ts # Express app setup
-└── server.ts # Server entry point
-\`\`\`
-
-<!-- ## 🐳 Docker Support
-
-To run the application using Docker:
-
-\`\`\`bash
-
-# Build and start containers
-
-docker-compose up --build
-
-# Stop containers
-
-docker-compose down
-\`\`\` -->
+├── config/         # Configuration files
+├── controllers/    # Request handlers
+├── middleware/     # Express middleware
+├── migrations/     # Database migrations
+│   ├── master/    # Master database migrations
+│   └── tenants/   # Tenant-specific migrations
+├── models/        # Database models
+├── routes/        # API routes
+├── services/      # Business logic
+├── app.ts         # Express app setup
+└── server.ts      # Server entry point
+```
 
 ## 🔧 Available Scripts
 
-- `yarn dev`: Start development server
-- `yarn build`: Build the project
-- `yarn start`: Start production server
-- `yarn clean`: Clean build directory
-- `yarn migrate:master:up`: Run master database up migrations
-- `yarn migrate:master:down`: Run master database down migrations
-- `yarn migrate:tenant:up`: Run tenant database up migrations
-- `yarn migrate:tenant:down`: Run tenant database down migrations
-- `yarn migrate:all:up`: Run all databases up migrations
-- `yarn migrate:all:down`: Run all databases down migrations
+```bash
+# Start development server
+yarn dev
+
+# Build the project
+yarn build
+
+# Start production server
+yarn start
+
+# Clean build directory
+yarn clean
+
+# Database migrations
+yarn migrate:master:up      # Run master database up migrations
+yarn migrate:master:down    # Run master database down migrations
+yarn migrate:tenant:up      # Run tenant database up migrations
+yarn migrate:tenant:down    # Run tenant database down migrations
+yarn migrate:all:up         # Run all databases up migrations
+yarn migrate:all:down       # Run all databases down migrations
+```
 
 ## 🤝 Contributing
 
