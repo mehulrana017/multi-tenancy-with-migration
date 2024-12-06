@@ -126,18 +126,32 @@ yarn migrate:all:down
 ## 📁 Project Structure
 
 ```
-src/
-├── config/         # Configuration files
-├── controllers/    # Request handlers
-├── middleware/     # Express middleware
-├── migrations/     # Database migrations
-│   ├── master/    # Master database migrations
-│   └── tenants/   # Tenant-specific migrations
-├── models/        # Database models
-├── routes/        # API routes
-├── services/      # Business logic
-├── app.ts         # Express app setup
-└── server.ts      # Server entry point
+├── src/
+│   ├── cli/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── migrations/
+│   │   ├── master/
+│   │   ├── tenants/
+│   │   └── index.ts
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── types/
+│   ├── utils/
+│   ├── app.ts
+│   └── server.ts
+├── .env
+├── .env.sample
+├── .gitignore
+├── .nvmrc
+├── docker-compose.yml
+├── Dockerfile
+├── package.json
+├── README.md
+├── tsconfig.json
+└── yarn.lock
 ```
 
 ## 🔧 Available Scripts

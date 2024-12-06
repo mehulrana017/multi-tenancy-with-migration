@@ -44,7 +44,7 @@ const getTenantDBConnection = async (
   try {
     const dbURI = process.env.MONGO_URI!.replace("<DB_NAME>", tenantDBName);
     const connection = await mongoose.createConnection(dbURI, {
-      maxPoolSize: 50,
+      maxPoolSize: 100,
       serverSelectionTimeoutMS: 120000,
       socketTimeoutMS: 450000,
     });
