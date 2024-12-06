@@ -1,0 +1,32 @@
+{
+  "name": "multi-tenancy-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.3"
+  },
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "migrate:master:up": "ts-node src/migrations/index.ts master up",
+    "migrate:master:down": "ts-node src/migrations/index.ts master down",
+    "migrate:tenant:up": "ts-node src/migrations/index.ts tenant up",
+    "migrate:tenant:down": "ts-node src/migrations/index.ts tenant down",
+    "migrate:all:up": "ts-node src/migrations/index.ts all up",
+    "migrate:all:down": "ts-node src/migrations/index.ts all down"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^22.10.1",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
