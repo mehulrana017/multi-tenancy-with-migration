@@ -34,7 +34,7 @@ To use MongoDB Atlas:
 
 ## 📋 Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v22.11)
 - MongoDB
 - Docker (optional)
 - TypeScript
